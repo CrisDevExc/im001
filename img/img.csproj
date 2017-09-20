@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E61AD32-7C85-4A85-97FF-4FDABF5CDFB6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>img</RootNamespace>
+    <AssemblyName>img</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.0.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Algoritmos\BusquedaExactaEnImagenCompleta.cs" />
+    <Compile Include="Algoritmos\BusquedaExactaOriginal.cs" />
+    <Compile Include="Algoritmos\BusquedaExactaPorContenedorExtendido.cs" />
+    <Compile Include="Algoritmos\BusquedaExactaSoloParametrosRelacionados.cs" />
+    <Compile Include="Algoritmos\BusquedaNoExactaEnImagenCompleta.cs" />
+    <Compile Include="Algoritmos\BusquedaNoExactaOriginal.cs" />
+    <Compile Include="Algoritmos\BusquedaNoExactaPorContenedorExtendido.cs" />
+    <Compile Include="Algoritmos\BusquedaNoExactaSoloParametrosRelacionados.cs" />
+    <Compile Include="Algoritmos\Comun\BusquedaBase.cs" />
+    <Compile Include="Algoritmos\Comun\FragmentadorDeImagenCompleta1.cs" />
+    <Compile Include="Algoritmos\Comun\IBusqueda.cs" />
+    <Compile Include="Algoritmos\Comun\IDivisorDeImagenCompleta.cs" />
+    <Compile Include="Algoritmos\Comun\UbicacionRelacionada.cs" />
+    <Compile Include="Algoritmos\Resultados\ResultadoDeBusquedaExactaOriginal.cs" />
+    <Compile Include="Algoritmos\Resultados\ResultadoDeBusquedaNoExactaSoloParametrosRelacionados.cs" />
+    <Compile Include="Algoritmos\Resultados\ResultadoDeBusquedaNoExactaPorContenedorExtendido.cs" />
+    <Compile Include="Algoritmos\Resultados\ResultadoDeBusquedaNoExactaOriginal.cs" />
+    <Compile Include="Algoritmos\Resultados\ResultadoDeBusquedaNoExactaEnImagenCompleta.cs" />
+    <Compile Include="Algoritmos\Resultados\ResultadoDeBusquedaExactaSoloParametrosRelacionados.cs" />
+    <Compile Include="Algoritmos\Resultados\ResultadoDeBusquedaExactaPorContenedorExtendido.cs" />
+    <Compile Include="Algoritmos\Resultados\ResultadoDeBusquedaExactaEnImagenCompleta.cs" />
+    <Compile Include="Analizadores\AnalizadorBase.cs" />
+    <Compile Include="Analizadores\AnalizadorPorBusquedaExactaEnImagenCompleta.cs" />
+    <Compile Include="Analizadores\AnalizadorPorBusquedaNoExactaEnImagenCompleta.cs" />
+    <Compile Include="Analizadores\AnalizadorPorBusquedaNoExactaOriginal.cs" />
+    <Compile Include="Analizadores\AnalizadorPorBusquedaExactaOriginal.cs" />
+    <Compile Include="Analizadores\AnalizadorPorBusquedaExactaEnContenedorExtendido.cs" />
+    <Compile Include="Analizadores\AnalizadorPorBusquedaNoExactaEnContenedorExtendido.cs" />
+    <Compile Include="Analizadores\Atributos\AtributoCoeficienteDeSimilitudCasiExacto.cs" />
+    <Compile Include="Analizadores\Atributos\AtributoCoeficienteDeSimilitudNoExacto.cs" />
+    <Compile Include="Analizadores\Atributos\AtributoContenedorMaximoDeBusqueda.cs" />
+    <Compile Include="Analizadores\Decorator\AnalisisDeSimilitud.cs" />
+    <Compile Include="Analizadores\Decorator\AnalisisDeSimilitudBase.cs" />
+    <Compile Include="Analizadores\Decorator\AnalisisDeSimilitudDecorator.cs" />
+    <Compile Include="Analizadores\Atributos\AtributoUbicacionCentralRespectoAOriginal.cs" />
+    <Compile Include="Analizadores\Atributos\AtributoContenedorDeBusquedaTamañoX.cs" />
+    <Compile Include="Analizadores\Atributos\AtributoCoeficienteDeSimilitudExacto.cs" />
+    <Compile Include="Analizadores\IAnalizador.cs" />
+    <Compile Include="Analizadores\IAnalizadorPorBusquedaExactaEnImagenCompleta.cs" />
+    <Compile Include="Analizadores\IAnalizadorPorBusquedaExactaOriginal.cs" />
+    <Compile Include="Analizadores\IAnalizadorPorBusquedaNoExactaEnContenedorExtendido.cs" />
+    <Compile Include="Analizadores\IAnalizadorPorBusquedaNoExactaEnImagenCompleta.cs" />
+    <Compile Include="Analizadores\IAnalizadorPorBusquedaNoExactaOriginal.cs" />
+    <Compile Include="Analizadores\IAnalizadorPorBusquedaExactaEnContenedorExtendido.cs" />
+    <Compile Include="Comun\BitmapWrapper.cs" />
+    <Compile Include="Comun\IBitmapContainer.cs" />
+    <Compile Include="Comun\IBitmapWrapper.cs" />
+    <Compile Include="Configuracion\DIContainer.cs" />
+    <Compile Include="Estrategias\SecuenciaDeBusqueda.cs" />
+    <Compile Include="ProcesamientoDeImagen\ExtBitmap.cs" />
+    <Compile Include="Fragmentos\Fragmento.cs" />
+    <Compile Include="Fragmentos\FragmentoPrincipal.cs" />
+    <Compile Include="Fragmentos\FragmentoRelacionado.cs" />
+    <Compile Include="Fragmentos\IFragmento.cs" />
+    <Compile Include="Fragmentos\IFragmentoPrincipal.cs" />
+    <Compile Include="Fragmentos\IFragmentoRelacionado.cs" />
+    <Compile Include="ProcesamientoDeImagen\IProcesador.cs" />
+    <Compile Include="ProcesamientoDeImagen\Matrix.cs" />
+    <Compile Include="Procesador.cs" />
+    <Compile Include="ProcesamientoDeImagen\Procesador.cs" />
+    <Compile Include="ResultadoDeAnalisisDeFragmento.cs" />
+    <Compile Include="ResultadoDeBusqueda.cs" />
+    <Compile Include="TextoRelacionado.cs" />
+    <Compile Include="TipoDeZona.cs" />
+    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
